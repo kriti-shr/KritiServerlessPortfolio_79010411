@@ -1,0 +1,830 @@
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e9e3;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 100%;
+    padding: 18px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #334b3b;
+}
+
+.logo span,
+footer span {
+    color: #799a7c;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+nav a {
+    color: #425347;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #799a7c;
+}
+
+.logout-btn {
+    border: none;
+    background: none;
+
+    color: #425347;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: color 0.3s ease;
+}
+
+.logout-btn:hover {
+    color: #799a7c;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: 100%;
+    min-height: 62vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef5ef,
+            #ffffff
+        );
+}
+
+.hero-content {
+    width: 100%;
+    padding: 75px 25px;
+
+    text-align: center;
+}
+
+.small-title {
+    color: #799a7c;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(46px, 5vw, 72px);
+
+    line-height: 1.1;
+
+    color: #29382e;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #799a7c;
+}
+
+.hero-description {
+    width: 100%;
+    max-width: 680px;
+
+    margin: 0 auto 32px;
+
+    color: #66736a;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.primary-btn {
+    border: none;
+
+    background: #6f9074;
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: #5e7d63;
+
+    transform: translateY(-2px);
+}
+
+.primary-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.secondary-btn {
+    background: #ffffff;
+
+    color: #506454;
+
+    border: 1px solid #9db19f;
+
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    background: #edf4ee;
+}
+
+.full-btn {
+    width: 100%;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.page-section {
+    width: 100%;
+    min-height: auto;
+}
+
+.section-container {
+    width: 100%;
+
+    padding: 75px 25px;
+}
+
+.section-heading {
+    width: 100%;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+
+    color: #304236;
+
+    margin-bottom: 12px;
+}
+
+.section-heading p:last-child {
+    color: #718077;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ABOUT ME
+========================================================= */
+
+.about-content {
+    width: 100%;
+
+    text-align: center;
+}
+
+.about-content p {
+    width: 100%;
+
+    margin: 0 auto 15px;
+
+    color: #68766d;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.about-content strong {
+    color: #4f6849;
+}
+
+
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+
+.portfolio-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.info-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e9e2;
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(45, 70, 50, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(45, 70, 50, 0.08);
+}
+
+.card-icon {
+    font-size: 32px;
+
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    color: #35493b;
+
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: #68766d;
+
+    margin-bottom: 7px;
+
+    line-height: 1.6;
+}
+
+.muted {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SKILL TAGS
+========================================================= */
+
+.skills {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.skills span {
+    background: #edf4ee;
+
+    color: #58715d;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MY SKILLS
+========================================================= */
+
+.skills-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.skill-card {
+    width: 100%;
+
+    min-height: 180px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2eadf;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-shadow:
+        0 8px 25px rgba(45, 70, 50, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(45, 70, 50, 0.09);
+}
+
+.skill-card h3 {
+    color: #4f6849;
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    color: #68766d;
+
+    line-height: 1.6;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   BLOG
+========================================================= */
+
+.blog-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.blog-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e9e2;
+
+    border-radius: 12px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 8px 25px rgba(45, 70, 50, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(45, 70, 50, 0.08);
+}
+
+.blog-card h3 {
+    color: #34483a;
+
+    margin-bottom: 12px;
+
+    line-height: 1.4;
+}
+
+.post-date {
+    color: #799a7c;
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+.blog-card p {
+    color: #68766d;
+
+    line-height: 1.7;
+}
+
+.author {
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    color: #849087;
+}
+
+.create-blog-btn {
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+.form-section {
+    width: 100%;
+
+    min-height: 70vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 25px;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 480px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e9e2;
+
+    border-radius: 14px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 10px 35px rgba(45, 70, 50, 0.07);
+}
+
+.post-form-card {
+    max-width: 700px;
+}
+
+.form-heading {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.form-heading h2 {
+    font-size: 32px;
+
+    color: #304236;
+
+    margin-bottom: 8px;
+}
+
+.form-heading p:last-child {
+    color: #758078;
+
+    line-height: 1.6;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #425347;
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid #d4dfd6;
+
+    border-radius: 7px;
+
+    padding: 12px 14px;
+
+    outline: none;
+
+    color: #35483a;
+
+    background: #fbfdfb;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #799a7c;
+
+    box-shadow:
+        0 0 0 3px rgba(121, 154, 124, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 150px;
+}
+
+.checkbox-group {
+    display: flex;
+
+    gap: 9px;
+
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+}
+
+.checkbox-group input {
+    margin-top: 5px;
+}
+
+.checkbox-group label {
+    color: #68766d;
+
+    font-size: 14px;
+}
+
+.form-message {
+    text-align: center;
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color: #58715d;
+}
+
+.error-message {
+    color: #b85c5c;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.success-message {
+    color: #58715d;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.form-footer {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #718077;
+
+    font-size: 14px;
+}
+
+.form-footer a {
+    color: #6f9074;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    background: #29382e;
+
+    color: #ffffff;
+
+    padding: 45px 25px;
+
+    text-align: center;
+}
+
+.footer-content {
+    width: 100%;
+}
+
+.footer-content h3 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.footer-content p {
+    color: #bdc9bf;
+
+    margin-bottom: 5px;
+}
+
+.footer-content .copyright {
+    margin-top: 20px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .nav-container {
+        padding: 15px 18px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a,
+    .logout-btn {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero-content {
+        padding: 55px 18px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section-container {
+        padding: 60px 18px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .portfolio-grid,
+    .blog-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .info-card,
+    .blog-card,
+    .skill-card {
+        padding: 25px;
+    }
+
+    .skill-card {
+        min-height: 160px;
+    }
+
+    .form-section {
+        padding: 40px 18px;
+    }
+
+    .form-card {
+        padding: 25px;
+    }
+
+    footer {
+        padding: 35px 18px;
+    }
+}

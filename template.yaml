@@ -1,0 +1,164 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: >
+  Serverless Portfolio and Blog Platform
+  Student: Kriti
+  Student ID: 79010411
+
+Globals:
+  Function:
+    Runtime: nodejs24.x
+    Architectures:
+      - x86_64
+    Timeout: 10
+    MemorySize: 128
+
+Resources:
+  BlogPostsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: BlogPostsSAM-Kriti-79010411
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+
+  UserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: PortfolioBlogUserPool-Kriti-79010411
+      UsernameAttributes:
+        - email
+      AutoVerifiedAttributes:
+        - email
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireUppercase: true
+          RequireLowercase: true
+          RequireNumbers: true
+          RequireSymbols: false
+      Schema:
+        - Name: name
+          AttributeDataType: String
+          Mutable: true
+          Required: true
+
+  UserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      UserPoolId: !Ref UserPool
+      ClientName: PortfolioBlogClient-Kriti-79010411
+      GenerateSecret: false
+      ExplicitAuthFlows:
+        - ALLOW_USER_PASSWORD_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
+        - ALLOW_USER_SRP_AUTH
+
+  FrontendBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: serverless-portfolio-kriti-79010411
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: index.html
+
+  FrontendBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref FrontendBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: PublicReadForWebsite
+            Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
+            Resource: !Sub '${FrontendBucket.Arn}/*'
+
+  PostsHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: '$default'
+      CorsConfiguration:
+        AllowOrigins:
+          - http://localhost:5173
+          - http://localhost:5174
+          - !Sub 'http://${FrontendBucket}.s3-website-${AWS::Region}.amazonaws.com'
+        AllowHeaders:
+          - content-type
+          - authorization
+        AllowMethods:
+          - GET
+          - POST
+          - OPTIONS
+        ExposeHeaders:
+          - www-authenticate
+          - apigw-requestid
+      Auth:
+        DefaultAuthorizer: CognitoAuthorizer
+        Authorizers:
+          CognitoAuthorizer:
+            JwtConfiguration:
+              issuer: !Sub 'https://cognito-idp.${AWS::Region}.amazonaws.com/${UserPool}'
+              audience:
+                - !Ref UserPoolClient
+            IdentitySource: $request.header.Authorization
+
+  PostsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: PostsFunctionSAM-79010411
+      CodeUri: backend/functions/posts/
+      Handler: app.handler
+      Role: arn:aws:iam::613005795774:role/LabRole
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref BlogPostsTable
+      Events:
+        GetPosts:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PostsHttpApi
+            Path: /posts
+            Method: GET
+            Auth:
+              Authorizer: NONE
+        CreatePost:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PostsHttpApi
+            Path: /posts
+            Method: POST
+
+Outputs:
+  WebsiteURL:
+    Description: S3 static website URL
+    Value: !Sub 'http://${FrontendBucket}.s3-website-${AWS::Region}.amazonaws.com'
+  PostsFunctionName:
+    Description: Lambda function name
+    Value: !Ref PostsFunction
+  BlogPostsTableName:
+    Description: DynamoDB table name
+    Value: !Ref BlogPostsTable
+  ApiUrl:
+    Description: API Gateway base URL
+    Value: !Sub 'https://${PostsHttpApi}.execute-api.${AWS::Region}.amazonaws.com'
+  PostsApiUrl:
+    Description: Blog posts endpoint
+    Value: !Sub 'https://${PostsHttpApi}.execute-api.${AWS::Region}.amazonaws.com/posts'
+  CognitoUserPoolId:
+    Description: Cognito User Pool ID
+    Value: !Ref UserPool
+  CognitoClientId:
+    Description: Cognito App Client ID
+    Value: !Ref UserPoolClient
