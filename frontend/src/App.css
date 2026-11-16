@@ -1,11 +1,12 @@
+
 /* =========================================================
    NAVBAR
 ========================================================= */
 
 .navbar {
     width: 100%;
-    background: #ffffff;
-    border-bottom: 1px solid #e2e9e3;
+    background: #F8F5F0;
+    border-bottom: 1px solid #E5D9C9;
 
     position: sticky;
     top: 0;
@@ -24,12 +25,12 @@
 .logo {
     font-size: 26px;
     font-weight: 700;
-    color: #334b3b;
+    color: #5C4635;
 }
 
 .logo span,
 footer span {
-    color: #799a7c;
+    color: #B89B7A;
 }
 
 nav {
@@ -39,21 +40,21 @@ nav {
 }
 
 nav a {
-    color: #425347;
+    color: #756454;
     font-size: 15px;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #799a7c;
+    color: #B89B7A;
 }
 
 .logout-btn {
     border: none;
     background: none;
 
-    color: #425347;
+    color: #756454;
     font-size: 15px;
     font-weight: 600;
 
@@ -63,7 +64,7 @@ nav a:hover {
 }
 
 .logout-btn:hover {
-    color: #799a7c;
+    color: #B89B7A;
 }
 
 
@@ -82,8 +83,8 @@ nav a:hover {
     background:
         linear-gradient(
             135deg,
-            #eef5ef,
-            #ffffff
+            #F1E8DC,
+            #FDFBF8
         );
 }
 
@@ -95,7 +96,7 @@ nav a:hover {
 }
 
 .small-title {
-    color: #799a7c;
+    color: #A88968;
 
     font-size: 13px;
     font-weight: 700;
@@ -110,13 +111,13 @@ nav a:hover {
 
     line-height: 1.1;
 
-    color: #29382e;
+    color: #4B392C;
 
     margin-bottom: 22px;
 }
 
 .hero h1 span {
-    color: #799a7c;
+    color: #B89B7A;
 }
 
 .hero-description {
@@ -125,7 +126,7 @@ nav a:hover {
 
     margin: 0 auto 32px;
 
-    color: #66736a;
+    color: #756454;
 
     font-size: 18px;
 
@@ -167,14 +168,14 @@ nav a:hover {
 .primary-btn {
     border: none;
 
-    background: #6f9074;
+    background: #A88968;
     color: #ffffff;
 
     cursor: pointer;
 }
 
 .primary-btn:hover {
-    background: #5e7d63;
+    background: #8F7254;
 
     transform: translateY(-2px);
 }
@@ -186,17 +187,17 @@ nav a:hover {
 }
 
 .secondary-btn {
-    background: #ffffff;
+    background: #FDFBF8;
 
-    color: #506454;
+    color: #756454;
 
-    border: 1px solid #9db19f;
+    border: 1px solid #CDBBA5;
 
     cursor: pointer;
 }
 
 .secondary-btn:hover {
-    background: #edf4ee;
+    background: #EDE3D5;
 }
 
 .full-btn {
@@ -230,13 +231,13 @@ nav a:hover {
 .section-heading h2 {
     font-size: 40px;
 
-    color: #304236;
+    color: #5C4635;
 
     margin-bottom: 12px;
 }
 
 .section-heading p:last-child {
-    color: #718077;
+    color: #897967;
 
     line-height: 1.7;
 }
@@ -257,7 +258,7 @@ nav a:hover {
 
     margin: 0 auto 15px;
 
-    color: #68766d;
+    color: #756454;
 
     font-size: 16px;
 
@@ -265,7 +266,7 @@ nav a:hover {
 }
 
 .about-content strong {
-    color: #4f6849;
+    color: #8F7254;
 }
 
 
@@ -287,16 +288,16 @@ nav a:hover {
 .info-card {
     width: 100%;
 
-    background: #ffffff;
+    background: #FDFBF8;
 
-    border: 1px solid #e1e9e2;
+    border: 1px solid #E5D9C9;
 
     border-radius: 12px;
 
     padding: 30px;
 
     box-shadow:
-        0 8px 25px rgba(45, 70, 50, 0.05);
+        0 8px 25px rgba(92, 70, 53, 0.05);
 
     transition:
         transform 0.3s ease,
@@ -307,7 +308,7 @@ nav a:hover {
     transform: translateY(-4px);
 
     box-shadow:
-        0 12px 30px rgba(45, 70, 50, 0.08);
+        0 12px 30px rgba(92, 70, 53, 0.08);
 }
 
 .card-icon {
@@ -317,13 +318,13 @@ nav a:hover {
 }
 
 .info-card h3 {
-    color: #35493b;
+    color: #5C4635;
 
     margin-bottom: 15px;
 }
 
 .info-card p {
-    color: #68766d;
+    color: #756454;
 
     margin-bottom: 7px;
 
@@ -348,9 +349,9 @@ nav a:hover {
 }
 
 .skills span {
-    background: #edf4ee;
+    background: #EDE3D5;
 
-    color: #58715d;
+    color: #756454;
 
     padding: 7px 13px;
 
@@ -382,9 +383,9 @@ nav a:hover {
 
     padding: 30px;
 
-    background: #ffffff;
+    background: #FDFBF8;
 
-    border: 1px solid #e2eadf;
+    border: 1px solid #E5D9C9;
 
     border-radius: 12px;
 
@@ -399,7 +400,7 @@ nav a:hover {
     align-items: center;
 
     box-shadow:
-        0 8px 25px rgba(45, 70, 50, 0.05);
+        0 8px 25px rgba(92, 70, 53, 0.05);
 
     transition:
         transform 0.3s ease,
@@ -410,11 +411,11 @@ nav a:hover {
     transform: translateY(-5px);
 
     box-shadow:
-        0 10px 25px rgba(45, 70, 50, 0.09);
+        0 10px 25px rgba(92, 70, 53, 0.09);
 }
 
 .skill-card h3 {
-    color: #4f6849;
+    color: #8F7254;
 
     font-size: 21px;
 
@@ -422,7 +423,7 @@ nav a:hover {
 }
 
 .skill-card p {
-    color: #68766d;
+    color: #756454;
 
     line-height: 1.6;
 
@@ -448,16 +449,16 @@ nav a:hover {
 .blog-card {
     width: 100%;
 
-    background: #ffffff;
+    background: #FDFBF8;
 
-    border: 1px solid #e1e9e2;
+    border: 1px solid #E5D9C9;
 
     border-radius: 12px;
 
     padding: 28px;
 
     box-shadow:
-        0 8px 25px rgba(45, 70, 50, 0.05);
+        0 8px 25px rgba(92, 70, 53, 0.05);
 
     transition:
         transform 0.3s ease,
@@ -468,11 +469,11 @@ nav a:hover {
     transform: translateY(-4px);
 
     box-shadow:
-        0 12px 30px rgba(45, 70, 50, 0.08);
+        0 12px 30px rgba(92, 70, 53, 0.08);
 }
 
 .blog-card h3 {
-    color: #34483a;
+    color: #5C4635;
 
     margin-bottom: 12px;
 
@@ -480,7 +481,7 @@ nav a:hover {
 }
 
 .post-date {
-    color: #799a7c;
+    color: #A88968;
 
     font-size: 13px;
 
@@ -488,7 +489,7 @@ nav a:hover {
 }
 
 .blog-card p {
-    color: #68766d;
+    color: #756454;
 
     line-height: 1.7;
 }
@@ -498,7 +499,7 @@ nav a:hover {
 
     font-size: 13px;
 
-    color: #849087;
+    color: #A09282;
 }
 
 .create-blog-btn {
@@ -527,16 +528,16 @@ nav a:hover {
     width: 100%;
     max-width: 480px;
 
-    background: #ffffff;
+    background: #FDFBF8;
 
-    border: 1px solid #e1e9e2;
+    border: 1px solid #E5D9C9;
 
     border-radius: 14px;
 
     padding: 35px;
 
     box-shadow:
-        0 10px 35px rgba(45, 70, 50, 0.07);
+        0 10px 35px rgba(92, 70, 53, 0.07);
 }
 
 .post-form-card {
@@ -552,13 +553,13 @@ nav a:hover {
 .form-heading h2 {
     font-size: 32px;
 
-    color: #304236;
+    color: #5C4635;
 
     margin-bottom: 8px;
 }
 
 .form-heading p:last-child {
-    color: #758078;
+    color: #897967;
 
     line-height: 1.6;
 }
@@ -572,7 +573,7 @@ nav a:hover {
 
     margin-bottom: 7px;
 
-    color: #425347;
+    color: #756454;
 
     font-weight: 600;
 
@@ -583,7 +584,7 @@ nav a:hover {
 .form-group textarea {
     width: 100%;
 
-    border: 1px solid #d4dfd6;
+    border: 1px solid #DCCDBA;
 
     border-radius: 7px;
 
@@ -591,9 +592,9 @@ nav a:hover {
 
     outline: none;
 
-    color: #35483a;
+    color: #5C4635;
 
-    background: #fbfdfb;
+    background: #FBF8F3;
 
     transition:
         border-color 0.3s ease,
@@ -602,10 +603,10 @@ nav a:hover {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #799a7c;
+    border-color: #B89B7A;
 
     box-shadow:
-        0 0 0 3px rgba(121, 154, 124, 0.1);
+        0 0 0 3px rgba(184, 155, 122, 0.1);
 }
 
 .form-group textarea {
@@ -629,7 +630,7 @@ nav a:hover {
 }
 
 .checkbox-group label {
-    color: #68766d;
+    color: #756454;
 
     font-size: 14px;
 }
@@ -641,11 +642,11 @@ nav a:hover {
 
     font-size: 14px;
 
-    color: #58715d;
+    color: #8F7254;
 }
 
 .error-message {
-    color: #b85c5c;
+    color: #B85C5C;
 
     font-size: 14px;
 
@@ -653,7 +654,7 @@ nav a:hover {
 }
 
 .success-message {
-    color: #58715d;
+    color: #8F7254;
 
     font-size: 14px;
 
@@ -665,13 +666,13 @@ nav a:hover {
 
     margin-top: 22px;
 
-    color: #718077;
+    color: #897967;
 
     font-size: 14px;
 }
 
 .form-footer a {
-    color: #6f9074;
+    color: #A88968;
 
     font-weight: 600;
 }
@@ -684,7 +685,7 @@ nav a:hover {
 footer {
     width: 100%;
 
-    background: #29382e;
+    background: #4B392C;
 
     color: #ffffff;
 
@@ -704,7 +705,7 @@ footer {
 }
 
 .footer-content p {
-    color: #bdc9bf;
+    color: #E5D9C9;
 
     margin-bottom: 5px;
 }
